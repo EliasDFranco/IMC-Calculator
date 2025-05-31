@@ -22,25 +22,33 @@ class _GenderSelectorState extends State<GenderSelector> {
       children: [
         // Man - Male
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16, top: 16, right: 8, bottom: 16),
-            child: Container(
-              decoration: BoxDecoration(
-                // Aqui realizamos un if & else, pero de una forma abreviada dentro de un container | Si se pasa el puntero por hombre cambia o no de color, lo mismo para mujer
-                color: selectedGender == "Male"
-                    ? AppColors.backgroundComponentSelected
-                    : AppColors.backgroundComponent,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Image.asset("assets/Images/ImageMale.png", height: 100),
-                    SizedBox(height: 20),
-                    Text("Male".toUpperCase(),
-                        style: TextStyle(color: Colors.white, fontSize: 15))
-                  ],
+          child: GestureDetector(
+            onTap: (() {
+              setState(() {
+                selectedGender = "Male";
+              });
+            }),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 16, top: 16, right: 8, bottom: 16),
+              child: Container(
+                decoration: BoxDecoration(
+                  // Aqui realizamos un if & else, pero de una forma abreviada dentro de un container | Si se pasa el puntero por hombre cambia o no de color, lo mismo para mujer
+                  color: selectedGender == "Male"
+                      ? AppColors.backgroundComponentSelected
+                      : AppColors.backgroundComponent,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Image.asset("assets/Images/ImageMale.png", height: 100),
+                      SizedBox(height: 20),
+                      Text("Male".toUpperCase(),
+                          style: TextStyle(color: Colors.white, fontSize: 15))
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -48,25 +56,33 @@ class _GenderSelectorState extends State<GenderSelector> {
         ),
         // Woman - Female
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left:8, top: 16, bottom: 16, right: 16),
-            child: Container(
-              decoration: BoxDecoration(
-                color: selectedGender == "Female"
-                    ? AppColors.backgroundComponentSelected
-                    : AppColors.backgroundComponent,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Image.asset("assets/Images/Imagefemale.png", height: 100),
-                    SizedBox(height: 20),
-                    Text("Female".toUpperCase(),
-                        style: TextStyles
-                            .bodytext) // Aqui le pasamos la clase que hemos creado para no repetir tanto mismo código.
-                  ],
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedGender = "Female";
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 8, top: 16, bottom: 16, right: 16),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: selectedGender == "Female"
+                      ? AppColors.backgroundComponentSelected
+                      : AppColors.backgroundComponent,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Image.asset("assets/Images/Imagefemale.png", height: 100),
+                      SizedBox(height: 20),
+                      Text("Female".toUpperCase(),
+                          style: TextStyles
+                              .bodytext) // Aqui le pasamos la clase que hemos creado para no repetir tanto mismo código.
+                    ],
+                  ),
                 ),
               ),
             ),

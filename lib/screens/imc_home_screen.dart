@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:imc_calculator/components/gender_selector.dart';
 import 'package:imc_calculator/components/height_selector.dart';
 import 'package:imc_calculator/components/number_selector.dart';
@@ -19,7 +17,14 @@ class _ImcHomeScreentState extends State<ImcHomeScreen> {
       children: [
         GenderSelector(),
         HeightSelector(),
-        NumberSelector()
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(children: [
+            Expanded(child: NumberSelector(titulo: "PESO")),
+            SizedBox(width: 16),
+            Expanded(child: NumberSelector(titulo: "EDAD"))
+          ]),
+        ),
       ],
     );
   }

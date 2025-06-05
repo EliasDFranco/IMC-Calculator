@@ -43,7 +43,7 @@ class _GenderSelectorState extends State<GenderSelector> {
                   padding: const EdgeInsets.all(15),
                   child: Column(
                     children: [
-                      Image.asset("assets/Images/ImageMale.png", height: 100),
+                      Image.asset("assets/Images/maletwo.png", height: 100),
                       SizedBox(height: 20),
                       Text("Male".toUpperCase(),
                           style: TextStyle(color: Colors.white, fontSize: 15))

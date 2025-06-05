@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 class AppColors {
-  static const Color primary = Color(0xFF48A065);
-  static const Color secundary = Color(0xFFAAF76F);
-  static const Color accent = Color(0xFFFE3F76F);
+  static const Color primary = Color(0xFF552583);
+  static const Color secundary = Color(0xFFFDB927);
+  static const Color accent = Color(0xFFFFFFFF);
 
 // Bakckgrouds
-  static const Color background = Color.fromARGB(255, 110, 120, 56);
-  static const Color backgroundComponent = Color(0xFFDCF550);
-  static const Color backgroundComponentSelected = Color(0xFFAAC228);
+  static const Color background = Color(0xFF121212);
+  static const Color backgroundComponent = Color(0xFF1E1B2E);
+  static const Color backgroundComponentSelected = Color(0xFFFFD700);
 }

@@ -1,13 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:imc_calculator/core/apps_colors.dart';
 import 'package:imc_calculator/core/apps_textStyles.dart';
 
 class NumberSelector extends StatefulWidget {
   final String titulo;
-  const NumberSelector({super.key, required this.titulo});
+  final Function() onIncrement;
+  final int value;
+  final Function() onDecrement;
+  const NumberSelector(
+      {super.key,
+      required this.titulo,
+      required this.value,
+      required this.onIncrement,
+      required this.onDecrement});
 
   @override
   State<NumberSelector> createState() => _NumberSelectorState();
@@ -27,7 +32,7 @@ class _NumberSelectorState extends State<NumberSelector> {
           children: [
             Text(widget.titulo, style: TextStyles.bodytext),
             Text(
-              "0",
+              widget.value.toString(),
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 38,
@@ -38,7 +43,9 @@ class _NumberSelectorState extends State<NumberSelector> {
               children: [
                 Expanded(
                   child: FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      widget.onDecrement();
+                    },
                     shape: CircleBorder(),
                     backgroundColor: AppColors.primary,
                     child: Icon(
@@ -50,7 +57,9 @@ class _NumberSelectorState extends State<NumberSelector> {
                 SizedBox(width: 16),
                 Expanded(
                   child: FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      widget.onIncrement();
+                    },
                     shape: CircleBorder(),
                     backgroundColor: AppColors.primary,
                     child: Icon(
@@ -63,7 +72,7 @@ class _NumberSelectorState extends State<NumberSelector> {
             )
           ],
         ),
-      ),
+      ),   
     );
   }
 }

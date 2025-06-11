@@ -43,6 +43,7 @@ class _NumberSelectorState extends State<NumberSelector> {
               children: [
                 Expanded(
                   child: FloatingActionButton(
+                    heroTag: null,
                     onPressed: () {
                       widget.onDecrement();
                     },
@@ -57,6 +58,7 @@ class _NumberSelectorState extends State<NumberSelector> {
                 SizedBox(width: 16),
                 Expanded(
                   child: FloatingActionButton(
+                    heroTag: null,
                     onPressed: () {
                       widget.onIncrement();
                     },

@@ -14,7 +14,8 @@ class ImcHomeScreen extends StatefulWidget {
 }
 
 class _ImcHomeScreenState extends State<ImcHomeScreen> {
-  int selectorAge = 6;
+  int selectorAge = 10;
+  double selectorHeight = 1.67;
   double selectorWeight = 50;
   @override
   Widget build(BuildContext context) {
@@ -65,8 +66,8 @@ class _ImcHomeScreenState extends State<ImcHomeScreen> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ImcResult(
-                          height: selectorWeight,
-                          age: selectorAge,
+                          height: selectorHeight,
+                          weight: selectorWeight,
                         )));
                   },
                   style: ButtonStyle(
